@@ -29,4 +29,8 @@ describe('Funcionalidade pagina de produtos', () => {
         cy.get('.dropdown-toggle > .mini-cart-items').should('contain', quantidade)
         cy.get('.woocommerce-message').should('contain', quantidade + ' × “Aether Gym Pant” foram adicionados no seu carrinho.')
     });
+
+    it.only('Deve adicionar produtos ao carrinho - Usando comando customizado', () => {
+        cy.addProdutos('Arcadio Gym Short', '34', 'Black', 3)
+    });
 });
